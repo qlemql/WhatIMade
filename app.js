@@ -4,6 +4,7 @@ const ScoreDisplay = document.querySelector("#score");
 const StartBtn = document.querySelector("start-btn");
 const width = 10;
 
+//테트리스 도형
 const lTetromino = [
   [1, width + 1, width * 2 + 1, 2],
   [width, width + 1, width + 2, width * 2 + 2],
@@ -49,6 +50,8 @@ const theTetrominoes = [
 
 let currentPosition = 4;
 let currentRotation = 0;
+
+//도형 랜덤 선택
 let random = Math.floor(Math.random() * theTetrominoes.length);
 let current = theTetrominoes[random][0];
 
@@ -64,4 +67,31 @@ function undraw() {
   });
 }
 
-draw();
+//도형이 매초마다 아래로 떨어지게
+timerId = setInterval(moveDown, 1000);
+
+//떨어지는 함수
+function moveDown() {
+  undraw();
+  currentPosition += width;
+  draw();
+  freeze();
+}
+
+//멈추게하는 함수
+function freeze() {
+  if (
+    current.some((index) =>
+      squares[currentPosition + index + width].classList.contains("taken")
+    )
+  ) {
+    current.forEach((index) =>
+      squares[currentPosition + index].classList.add("taken")
+    );
+    //새로운 도형이 떨어지게
+    random = Math.floor(Math.random() * theTetrominoes.length);
+    current = theTetrominoes[random][currentRotation];
+    currentPosition = 4;
+    draw();
+  }
+}
