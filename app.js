@@ -3,6 +3,7 @@ let squares = Array.from(document.querySelectorAll(".grid div"));
 const ScoreDisplay = document.querySelector("#score");
 const StartBtn = document.querySelector("start-btn");
 const width = 10;
+let nextRandom = 0;
 
 //테트리스 도형
 const lTetromino = [
@@ -103,10 +104,12 @@ function freeze() {
       squares[currentPosition + index].classList.add("taken")
     );
     //새로운 도형이 떨어지게
-    random = Math.floor(Math.random() * theTetrominoes.length);
+    random = nextRandom;
+    nextRandom = Math.floor(Math.random() * theTetrominoes.length);
     current = theTetrominoes[random][currentRotation];
     currentPosition = 4;
     draw();
+    displayShape();
   }
 }
 //왼쪽으로 움직일때 끝에서 넘어가지 않도록
@@ -160,4 +163,26 @@ function rotate() {
   }
   current = theTetrominoes[random][currentRotation];
   draw();
+}
+
+//다음 도형 미리보기
+const displaySquares = document.querySelectorAll(".mini-grid div");
+const displayWidth = 4;
+let displayIndex = 0;
+
+const upNextTetrominoes = [
+  [1, displayWidth + 1, displayWidth * 2 + 1, 2], //lTetromino
+  [0, displayWidth, displayWidth + 1, displayWidth * 2 + 1], //zTetromino
+  [1, displayWidth, displayWidth + 1, displayWidth + 2], //tTetromino
+  [0, 1, displayWidth, displayWidth + 1], //oTetromino
+  [1, displayWidth + 1, displayWidth * 2 + 1, displayWidth * 3 + 1], //iTetromino
+];
+
+function displayShape() {
+  displaySquares.forEach((square) => {
+    square.classList.remove("tetromino");
+  });
+  upNextTetrominoes[nextRandom].forEach((index) => {
+    displaySquares[displayIndex + index].classList.add("tetromino");
+  });
 }
