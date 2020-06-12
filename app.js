@@ -95,3 +95,23 @@ function freeze() {
     draw();
   }
 }
+//좌우로 움직이면서 끝에서 넘어가지 않도록
+
+function moveleft() {
+  undraw();
+  const isAtLeftEdge = current.some(
+    (index) => (currentPosition + index) % width === 0
+  );
+
+  if (!isAtLeftEdge) currentPosition -= 1;
+
+  if (
+    current.some((index) =>
+      squares[currentPosition + index].classList.contains("taken")
+    )
+  ) {
+    currentPosition += 1;
+  }
+
+  draw();
+}
