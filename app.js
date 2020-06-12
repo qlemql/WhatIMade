@@ -70,6 +70,20 @@ function undraw() {
 //도형이 매초마다 아래로 떨어지게
 timerId = setInterval(moveDown, 1000);
 
+//키보드로 움직이기
+function control(e) {
+  if (e.keyCode === 37) {
+    moveLeft();
+  } else if (e.keyCode === 38) {
+    rotate();
+  } else if (e.keyCode === 39) {
+    moveRight();
+  } else if (e.keyCode === 40) {
+    moveDown();
+  }
+}
+document.addEventListener("keyup", control);
+
 //떨어지는 함수
 function moveDown() {
   undraw();
@@ -97,7 +111,7 @@ function freeze() {
 }
 //왼쪽으로 움직일때 끝에서 넘어가지 않도록
 
-function moveleft() {
+function moveLeft() {
   undraw();
   const isAtLeftEdge = current.some(
     (index) => (currentPosition + index) % width === 0
@@ -113,5 +127,37 @@ function moveleft() {
     currentPosition += 1;
   }
 
+  draw();
+}
+
+//오른쪽으로 움직일때 끝에서 넘어가지 않도록
+
+function moveRight() {
+  undraw();
+  const isAtRightEdge = current.some(
+    (index) => (currentPosition + index) % width === width - 1
+  );
+
+  if (!isAtRightEdge) currentPosition += 1;
+
+  if (
+    current.some((index) =>
+      squares[currentPosition + index].classList.contains("taken")
+    )
+  ) {
+    currentPosition -= 1;
+  }
+
+  draw();
+}
+
+//도형 회전
+function rotate() {
+  undraw();
+  currentRotation++;
+  if (currentRotation === current.length) {
+    currentRotation = 0;
+  }
+  current = theTetrominoes[random][currentRotation];
   draw();
 }
