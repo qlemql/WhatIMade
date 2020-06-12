@@ -95,7 +95,7 @@ function freeze() {
     draw();
   }
 }
-//좌우로 움직이면서 끝에서 넘어가지 않도록
+//왼쪽으로 움직일때 끝에서 넘어가지 않도록
 
 function moveleft() {
   undraw();
