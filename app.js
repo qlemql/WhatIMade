@@ -6,6 +6,7 @@ const width = 10;
 let nextRandom = 0;
 let timerId;
 let score = 0;
+const colors = ["orange", "red", "purple", "green", "blue"];
 
 //테트리스 도형
 const lTetromino = [
@@ -61,12 +62,14 @@ let current = theTetrominoes[random][0];
 function draw() {
   current.forEach((index) => {
     squares[currentPosition + index].classList.add("tetromino");
+    squares[currentPosition + index].style.backgroundColor = colors[random];
   });
 }
 
 function undraw() {
   current.forEach((index) => {
     squares[currentPosition + index].classList.remove("tetromino");
+    squares[currentPosition + index].style.backgroundColor = "";
   });
 }
 
@@ -172,7 +175,7 @@ function rotate() {
 //다음 도형 미리보기
 const displaySquares = document.querySelectorAll(".mini-grid div");
 const displayWidth = 4;
-let displayIndex = 0;
+const displayIndex = 0;
 
 const upNextTetrominoes = [
   [1, displayWidth + 1, displayWidth * 2 + 1, 2], //lTetromino
@@ -185,9 +188,12 @@ const upNextTetrominoes = [
 function displayShape() {
   displaySquares.forEach((square) => {
     square.classList.remove("tetromino");
+    square.style.backgroundColor = "";
   });
   upNextTetrominoes[nextRandom].forEach((index) => {
     displaySquares[displayIndex + index].classList.add("tetromino");
+    displaySquares[displayIndex + index].style.backgroundColor =
+      colors[nextRandom];
   });
 }
 
@@ -224,6 +230,7 @@ function addScore() {
       row.forEach((index) => {
         squares[index].classList.remove("taken");
         squares[index].classList.remove("tetromino");
+        squares[index].style.backgroundColor = "";
       });
       const squaresRemoved = squares.splice(i, width);
       squares = squaresRemoved.concat(squares);
