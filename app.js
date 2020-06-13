@@ -1,9 +1,10 @@
 const grid = document.querySelector(".grid");
 let squares = Array.from(document.querySelectorAll(".grid div"));
-const ScoreDisplay = document.querySelector("#score");
-const StartBtn = document.querySelector("start-btn");
+const scoreDisplay = document.querySelector("#score");
+const startBtn = document.querySelector("#start-btn");
 const width = 10;
 let nextRandom = 0;
+let timerId;
 
 //테트리스 도형
 const lTetromino = [
@@ -69,7 +70,7 @@ function undraw() {
 }
 
 //도형이 매초마다 아래로 떨어지게
-timerId = setInterval(moveDown, 1000);
+// timerId = setInterval(moveDown, 1000);
 
 //키보드로 움직이기
 function control(e) {
@@ -186,3 +187,15 @@ function displayShape() {
     displaySquares[displayIndex + index].classList.add("tetromino");
   });
 }
+
+startBtn.addEventListener("click", () => {
+  if (timerId) {
+    clearInterval(timerId);
+    timerId = null;
+  } else {
+    draw();
+    timerId = setInterval(moveDown, 1000);
+    nextRandom = Math.floor(Math.random() * theTetrominoes.length);
+    displayShape();
+  }
+});
