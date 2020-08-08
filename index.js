@@ -1,8 +1,19 @@
+var numberClicked = false; //전역 변수로 numberClicked를 설정
+
 function add(char) {
-  var display = document.getElementById("display");
-  //display.value는 input 태그 안에 들어 있는 값을 의미.
-  display.value = display.value + char;
-  //input 태그의 값 뒤에 char 문자를 추가해 주는 역할.
+  if (numberClicked == false) {
+    if (isNaN(char) == true) {
+    } else {
+      document.getElementById("display").value += char;
+    }
+  } else {
+    document.getElementById("display").value += char;
+  }
+  if (isNaN(char) == true) {
+    numberClicked = false;
+  } else {
+    numberClicked = true;
+  }
 }
 
 function calculate() {
