@@ -10,3 +10,8 @@ function calculate() {
   var result = eval(display.value);
   document.getElementById("result").value = result;
 }
+
+function reset() {
+  document.getElementById("display").value = "";
+  document.getElementById("result").value = "";
+}
