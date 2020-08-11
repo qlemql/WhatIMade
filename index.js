@@ -23,3 +23,11 @@ var 하루초 = 24 * 60 * 60 * 1000;
 console.log("일수 차이 : " + parseInt(날수 / 86400000) + "일");
 console.log("월수 차이 : " + parseInt(날수 / (86400000 * 30)) + "월");
 console.log("년수 차이 : " + parseInt(날수 / (86400000 * 30 * 12)) + "년");
+
+var Dday = new Date(2020, 12, 25);
+var now = new Date();
+
+var gap = now.getTime() - Dday.getTime();
+var result = Math.floor(gap / (1000 * 60 * 60 * 24)) * -1;
+
+document.write("남은 날은 " + result + " 일 입니다.");
