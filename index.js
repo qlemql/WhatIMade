@@ -24,6 +24,7 @@ console.log("일수 차이 : " + parseInt(날수 / 86400000) + "일");
 console.log("월수 차이 : " + parseInt(날수 / (86400000 * 30)) + "월");
 console.log("년수 차이 : " + parseInt(날수 / (86400000 * 30 * 12)) + "년");
 
+//D-day 계산
 var Dday = new Date(2020, 12, 25);
 var now = new Date();
 
