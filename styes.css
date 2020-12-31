@@ -170,7 +170,7 @@ section {
   font-weight: 500;
 }
 
-.container .card:hover .content .contentBx h3 span {
+.container .card:hover .content .contentBx h3 div {
   font-size: 12px;
   font-weight: 300;
   text-transform: initial;
