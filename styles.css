@@ -72,7 +72,7 @@
   top: 0;
   left: 0;
   max-width: 600px;
-  z-index: 10000;
+  z-index: 2;
   animation: animateCloud 50s linear infinite;
 }
 
@@ -81,7 +81,7 @@
   top: 0;
   left: 0;
   max-width: 500px;
-  z-index: 10000;
+  z-index: 2;
   animation: animateCloud 35s linear infinite;
 }
 
@@ -90,7 +90,7 @@
   top: 0;
   left: 0;
   max-width: 600px;
-  z-index: 10000;
+  z-index: 2;
   animation: animateCloud 80s linear infinite;
 }
 
@@ -99,7 +99,7 @@
   top: 200px;
   left: 0;
   max-width: 300px;
-  z-index: 10000;
+  z-index: 2;
   animation: animateCloud 70s linear infinite;
   animation-delay: -20s;
 }
@@ -109,7 +109,7 @@
   top: 150px;
   left: 0;
   max-width: 500px;
-  z-index: 10000;
+  z-index: 2;
   animation: animateCloud 40s linear infinite;
   animation-delay: -5s;
 }
@@ -119,7 +119,7 @@
   top: 76px;
   left: 0;
   max-width: 400px;
-  z-index: 10000;
+  z-index: 2;
   animation: animateCloud 30s linear infinite;
   animation-delay: -10s;
 }
