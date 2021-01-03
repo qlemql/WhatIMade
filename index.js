@@ -1,8 +1,8 @@
-let bg = document.getElementById("bg")
-let moon = document.getElementById("moon")
-let mountain = document.getElementById("mountain")
-let road = document.getElementById("road")
-let txt = document.getElementById("txt");
+let bg = document.getElementById("bg"),
+ moon = document.getElementById("moon"),
+ mountain = document.getElementById("mountain"),
+ road = document.getElementById("road"),
+ txt = document.getElementById("txt");
 
 window.addEventListener('scroll', function(){
     const value = window.scrollY;
