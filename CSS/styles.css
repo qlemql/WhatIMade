@@ -1,0 +1,33 @@
+/* COMMON */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* NAV TOP */
+
+.nav__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .nav__top__icon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav .top__icon {
+  padding-left: 5px;
+}
