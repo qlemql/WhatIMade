@@ -31,7 +31,60 @@
 
     <!-- NAV BAR BOTTOM -->
     <section class="nav__bottom">
-        <div class="nav__sidebar"><i class="fas fa-bars"></i></div>
+
+        
+        <button class="nav__sidebar" onclick="slidePage()"><i class="fas fa-bars"></i></button>
+
+        <!-- SIDE PAGE -->
+        <!-- 위 nav__sidebar 버튼을 누를때 옆으로 페이지가 나오는 기능? -->
+
+        <div id="sidebar__container">
+            <div class="container__setting"><i class="fas fa-cog"></i></div>
+            <div class="container__content">
+                <ul class="content__note">
+                    <li class="note__icon"><i class="far fa-sticky-note"></i></li>
+                    <li class="note__name">모든 노트</li>
+                    <li class="note__count">000</li>
+                </ul>
+                <ul class="content__note">
+                    <li class="note__icon"><i class="fas fa-external-link-square-alt"></i></li>
+                    <li class="note__name">이전 형식 노트</li>
+                    <li class="note__count">000</li>
+                </ul>
+                <ul class="content__note">
+                    <li class="note__icon"><i class="fas fa-bookmark"></i></li>
+                    <li class="note__name">자주 사용한 노트</li>
+                    <li class="note__count">000</li>
+                </ul>
+                <ul class="content__note">
+                    <li class="note__icon"><i class="fas fa-history"></i></li>
+                    <li class="note__name">최근에 가져온 노트</li>
+                    <li class="note__count">000</li>
+                </ul>
+                <ul class="content__note">
+                    <li class="note__icon"><i class="fas fa-user-friends"></i></li>
+                    <li class="note__name">공유 노트함</li>
+                </ul>
+                <ul class="content__note">
+                    <li class="note__icon"><i class="fas fa-trash-alt"></i></li>
+                    <li class="note__name">휴지통</li>
+                    <li class="note__count">000</li>
+                </ul>
+            </div>
+            <div class="container__folder">
+                <ul class="content__note">
+                    <li class="note__icon"><i class="fas fa-folder-plus"></i></li>
+                    <li class="note__name">폴더</li>
+                    <li class="note__count">000</li>
+                </ul>
+            </div>
+            <div class="container__folder-setting">폴더 관리</div>
+        </div>
+
+
+        <div class="hidden__folder">폴더</div>
+
+
         <ul class="nav__middle__icon">
             <li class="middle__icon"><i class="far fa-file-pdf"></i></li>
             <li class="middle__icon"><i class="fas fa-search"></i></li>
@@ -59,8 +112,9 @@
     </section>
 
     <!-- ADD -->
-
+    <!-- 버튼을 누를 때 노트 작성 페이지 생성 -->
     <button class="add"><i class="fas fa-plus"></i></button>
     
+    <script src="index.js"></script>
 </body>
 </html>
