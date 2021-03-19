@@ -12,6 +12,10 @@ body {
   position: relative;
 }
 
+a {
+  text-decoration: none;
+}
+
 ul {
   list-style: none;
   padding-left: 0;
@@ -66,6 +70,10 @@ nav .top__icon {
   padding-bottom: 10px;
 }
 
+.sidebar__container{
+  
+}
+
 .nav__sidebar {
   border: none;
   outline: none;
@@ -110,6 +118,9 @@ nav .top__icon {
 /* ADD */
 .add {
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   bottom: 100px;
   right: 30px;
   width: 50px;
