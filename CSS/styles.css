@@ -5,9 +5,11 @@
 }
 
 body {
-  padding: 0;
+  padding: 5px 10px;
   margin: 0;
-  cursor: pointer;
+  background-color: #f2f2f2;
+  /* cursor: pointer; */
+  position: relative;
 }
 
 ul {
@@ -15,7 +17,7 @@ ul {
   padding-left: 0;
 }
 
-/* NAV TOP */
+/* NAV BAR TOP */
 
 .nav__top {
   display: flex;
@@ -30,4 +32,89 @@ nav .nav__top__icon {
 }
 nav .top__icon {
   padding-left: 5px;
+}
+
+/* FOLDER */
+
+.folder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: 300px;
+}
+
+.folder .folder__name,
+.folder__count {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.folder__name {
+  font-size: 40px;
+  font-weight: 600;
+  padding-bottom: 10px;
+}
+
+/* NAV BAR BOTTOM */
+
+.nav__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.nav__sidebar {
+  border: none;
+  outline: none;
+}
+
+.hidden__folder {
+  display: none;
+}
+
+.nav__middle__icon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.middle__icon {
+  padding-left: 30px;
+}
+
+/* MAIN */
+
+.Main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width: auto;
+  height: 500px;
+}
+
+/* FOOTER */
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: auto;
+  height: 40px;
+}
+
+/* ADD */
+.add {
+  position: absolute;
+  bottom: 100px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background-color: #f46a4e;
+  color: #ffffff;
+  font-weight: thin;
 }
