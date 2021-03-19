@@ -45,7 +45,7 @@ nav .top__icon {
   justify-content: center;
   align-items: center;
   width: auto;
-  height: 300px;
+  height: 400px;
 }
 
 .folder .folder__name,
@@ -70,8 +70,7 @@ nav .top__icon {
   padding-bottom: 10px;
 }
 
-.sidebar__container{
-  
+.sidebar__container {
 }
 
 .nav__sidebar {
@@ -117,7 +116,7 @@ nav .top__icon {
 
 /* ADD */
 .add {
-  position: absolute;
+  position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -130,4 +129,12 @@ nav .top__icon {
   background-color: #f46a4e;
   color: #ffffff;
   font-weight: thin;
+  opacity: 0;
+  transition: opacity 300ms ease-in;
+  pointer-events: none;
+}
+
+.add.visible {
+  opacity: 1;
+  pointer-events: auto;
 }
