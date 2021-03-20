@@ -30,7 +30,7 @@ document.addEventListener('scroll',()=>{
 
 // Scroll Animation
 
-const hideTriggerMargin = 300;
+const hideTriggerMargin = 600;
 const hideElementList = document.querySelectorAll('.hide__folder');
 
 const hideFunc = function() {
