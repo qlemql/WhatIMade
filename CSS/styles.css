@@ -27,6 +27,11 @@ ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 10px 15px;
 }
 
 nav .nav__top__icon {
@@ -44,7 +49,7 @@ nav .top__icon {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: auto;
+  width: 100%;
   height: 400px;
 }
 
@@ -70,16 +75,24 @@ nav .top__icon {
   padding-bottom: 10px;
 }
 
-.sidebar__container {
-}
-
 .nav__sidebar {
   border: none;
   outline: none;
 }
 
-.hidden__folder {
-  display: none;
+.hide__folder {
+  padding-right: 50%;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.hide-up {
+  transform: translate(0, -1px);
+}
+
+.hide__folder.show {
+  opacity: 1;
+  transition: none;
 }
 
 .nav__middle__icon {
@@ -93,23 +106,73 @@ nav .top__icon {
 
 /* MAIN */
 
-.Main {
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: 500px;
+}
+
+.note__container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(100px, 300px));
+  grid-auto-rows: minmax(100px, auto);
+  gap: 10px;
+  width: 100%;
+  height: 500px;
+}
+
+.note__content:nth-child(3) {
+  grid-column: 2/3;
+  grid-row: 1/3;
+}
+
+.note__content:nth-child(5) {
+  grid-column: 1/2;
+  grid-row: 3/6;
+}
+
+.note__content:nth-child(6) {
+  grid-column: 2/3;
+  grid-row: 3/5;
+}
+
+.note__content:nth-child(10) {
+  grid-column: 2/3;
+  grid-row: 7/9;
+}
+
+.note__content:nth-child(12) {
+  grid-column: 1/2;
+  grid-row: 9/11;
+}
+
+.note__content:nth-child(15) {
+  grid-column: 2/3;
+  grid-row: 13/16;
+}
+
+.note__content {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: white;
-  width: auto;
-  height: 500px;
+  border-radius: 30px;
 }
 
 /* FOOTER */
 
 .footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: auto;
+  width: 100%;
   height: 40px;
+  background-color: #f2f2f2;
   color: #8b8b8b;
   font-weight: 500;
 }

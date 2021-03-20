@@ -29,14 +29,38 @@ function slidePage(){
 
 // Scrolling change folder size 
 
-
-
 const home = document.querySelector('.folder__detail');
 const homeHight = home.getBoundingClientRect().height
 
 document.addEventListener('scroll',()=>{
     home.style.opacity = 1 - window.scrollY / homeHight;
 });
+
+
+
+
+
+
+const hideTriggerMargin = 300;
+      const hideElementList = document.querySelectorAll('.hide__folder');
+
+      const hideFunc = function() {
+        for (const element of hideElementList) {
+          if (!element.classList.contains('show')) {
+            if (window.innerHeight > element.getBoundingClientRect().top + hideTriggerMargin) {
+              element.classList.add('show');
+            }
+          }
+        }
+      }
+
+      window.addEventListener('load', hideFunc);
+      window.addEventListener('scroll', hideFunc);
+
+
+
+
+
 
 
 
