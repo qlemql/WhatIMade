@@ -16,16 +16,6 @@ function init(){
 
 init();
 
-// Hide Folder
-
-function slidePage(){
-  var slidePage = document.getElementById("sidebar__container");
-  if (slidePage.style.display === "none") {
-      slidePage.style.display = "block";
-    } else {
-      slidePage.style.display = "none";
-    }
-}
 
 // Scrolling change folder size 
 
@@ -38,32 +28,35 @@ document.addEventListener('scroll',()=>{
 
 
 
-
-
+// Scroll Animation
 
 const hideTriggerMargin = 300;
-      const hideElementList = document.querySelectorAll('.hide__folder');
+const hideElementList = document.querySelectorAll('.hide__folder');
 
-      const hideFunc = function() {
-        for (const element of hideElementList) {
-          if (!element.classList.contains('show')) {
-            if (window.innerHeight > element.getBoundingClientRect().top + hideTriggerMargin) {
-              element.classList.add('show');
-            }
+const hideFunc = function() {
+  for (const element of hideElementList) {
+    if (!element.classList.contains('show')) {
+      if (window.innerHeight > element.getBoundingClientRect().top + hideTriggerMargin) {
+        element.classList.add('show');
           }
         }
       }
+    }
 
-      window.addEventListener('load', hideFunc);
-      window.addEventListener('scroll', hideFunc);
-
-
-
+window.addEventListener('load', hideFunc);
+window.addEventListener('scroll', hideFunc);
 
 
+// Hide Folder
 
-
-
+function slidePage(){
+  var slidePage = document.getElementById("sidebar__container");
+  if (slidePage.style.display === "none") {
+      slidePage.style.display = "block";
+    } else {
+      slidePage.style.display = "none";
+    }
+}
 
 
 // Show add when scrolling down
@@ -76,3 +69,28 @@ document.addEventListener("scroll",()=>{
     } else{
         add.classList.remove('visible')
     }});
+
+
+
+
+// Show Arrow up Button when scrolling down
+
+const arrowUp = document.querySelector(".arrowBtn");
+
+document.addEventListener("scroll",()=>{
+    if(window.scrollY > homeHight / 2 ){
+        arrowUp.classList.add("visible");
+    } else{
+        arrowUp.classList.remove('visible')
+    }});
+
+// Handle click on the ""arrow up" button
+
+arrowUp.addEventListener("click",()=>{
+    scrollIntoView('.folder');
+})
+
+function scrollIntoView(selector){
+  const scrollTo = document.querySelector(selector);
+  scrollTo.scrollIntoView({behavior:"smooth"});
+}
