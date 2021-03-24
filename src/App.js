@@ -40,7 +40,6 @@ const Container = styled.div`
 `
 
 const Main = styled.div`
-  background: blue;
   display: grid;
   grid-template-columns: 260px auto;
 `
