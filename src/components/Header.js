@@ -20,7 +20,7 @@ function Header() {
                     Hyun
                 </Name>
                 <UserImage>
-                    <img src="https://i.imgur.com/6VBx3io.png" />
+                    {/* <img src="https://i.imgur.com/6VBx3io.png" /> */}
                 </UserImage>
             </UserContainer>
         </Container>
