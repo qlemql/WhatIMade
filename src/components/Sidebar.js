@@ -62,7 +62,7 @@ function Sidebar(props) {
     )
 }
 
-export default Sidebar
+export default Sidebar;
 
 
 const Container = styled.div`

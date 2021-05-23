@@ -17,7 +17,7 @@ function ChatInput() {
     )
 }
 
-export default ChatInput
+export default ChatInput;
 
 const Container = styled.div`
     padding-left: 20px;

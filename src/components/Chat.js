@@ -32,7 +32,7 @@ function Chat() {
     )
 }
 
-export default Chat
+export default Chat;
 
 const Container = styled.div`
     display: grid;

@@ -5,7 +5,7 @@ function ChatMessage() {
     return (
         <Container>
             <UserAvatar>
-                <img src="https://randomuser.me/api/portraits/men/34.jpg" />
+                <img src="https://randomuser.me/api/portraits/men/34.jpg" alt="" />
             </UserAvatar>
             <MessageContent>
                 <Name>
@@ -20,7 +20,7 @@ function ChatMessage() {
     )
 }
 
-export default ChatMessage
+export default ChatMessage;
 
 const Container = styled.div`
     padding: 8px 20px;
