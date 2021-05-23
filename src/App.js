@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import styled from 'styled-components';
 import Sidebar from "./components/Sidebar";
 import db from './firebase';
+import { auth, provider } from './firebase';
 
 function App() {
 
@@ -18,6 +19,13 @@ function App() {
       setRooms(snapshot.docs.map ((doc) => {
         return { id: doc.id, name: doc.data().name}
       }))
+    })
+  }
+
+  const signOut = () => {
+    auth.signOut().then( () => {
+      localStorage.removeItem('user');
+      setUser(null);
     })
   }
 
@@ -35,7 +43,7 @@ function App() {
           <Login setUser={setUser} />
           :
           <Container>
-            <Header user={user} />
+            <Header signOut={signOut} user={user} />
               <Main>
                 <Sidebar rooms={rooms} />
                 <Switch Switch>
