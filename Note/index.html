@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="TaeHyun">
+    <meta name="description" content="Cloning Glaxy Note">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/reset.css">
+    <link rel="stylesheet" href="./CSS/styles.css">
+    <script src="https://kit.fontawesome.com/74ac6a490e.js" crossorigin="anonymous"></script>
+    <title>Glaxy Note</title>
+</head>
+<body>
+    <!-- NAV BAR TOP-->
+
+    <nav class="nav__top">
+        <div class="nav__time">
+            <h1>00:00</h1>
+        </div>
+        <ul class="nav__top__icon">
+            <li class="top__icon"><i class="fas fa-wifi"></i></li>
+            <li class="top__icon"><i class="fas fa-signal"></i></li>
+            <li class="top__icon"><i class="fas fa-battery-full"></i></li>
+        </ul>
+    </nav>
+
+    <!-- FOLDER -->
+    <section class="folder">
+        <div class="folder__detail">
+            <div class="folder__name">폴더</div>
+            <div class="folder__count">노트 24개</div>
+        </div>
+    </section>
+
+    <!-- NAV BAR BOTTOM -->
+    <section class="nav__bottom">
+
+        
+        <button class="nav__sidebar" onclick="slidePage()"><i class="fas fa-bars"></i></button>
+        <div class="hide__folder hide__up">폴더</div>
+        <!-- SIDE PAGE -->
+        <!-- 위 nav__sidebar 버튼을 누를때 옆으로 페이지가 나오는 기능? -->
+
+        <div id="sidebar__container">
+            <div class="container__setting"><i class="fas fa-cog"></i></div>
+            <div class="container__content">
+                <ul class="content__note">
+                    <li class="note__icon"><i class="far fa-sticky-note"></i></li>
+                    <li class="note__name">모든 노트</li>
+                    <li class="note__count">000</li>
+                </ul>
+                <ul class="content__note">
+                    <li class="note__icon"><i class="fas fa-external-link-square-alt"></i></li>
+                    <li class="note__name">이전 형식 노트</li>
+                    <li class="note__count">000</li>
+                </ul>
+                <ul class="content__note">
+                    <li class="note__icon"><i class="fas fa-bookmark"></i></li>
+                    <li class="note__name">자주 사용한 노트</li>
+                    <li class="note__count">000</li>
+                </ul>
+                <ul class="content__note">
+                    <li class="note__icon"><i class="fas fa-history"></i></li>
+                    <li class="note__name">최근에 가져온 노트</li>
+                    <li class="note__count">000</li>
+                </ul>
+                <ul class="content__note">
+                    <li class="note__icon"><i class="fas fa-user-friends"></i></li>
+                    <li class="note__name">공유 노트함</li>
+                </ul>
+                <ul class="content__note">
+                    <li class="note__icon"><i class="fas fa-trash-alt"></i></li>
+                    <li class="note__name">휴지통</li>
+                    <li class="note__count">000</li>
+                </ul>
+            </div>
+            <div class="container__folder">
+                <ul class="content__note">
+                    <li class="note__icon"><i class="fas fa-folder-plus"></i></li>
+                    <li class="note__name">폴더</li>
+                    <li class="note__count">000</li>
+                </ul>
+            </div>
+            <div class="container__folder-setting">폴더 관리</div>
+        </div>
+
+
+
+        <ul class="nav__middle__icon">
+            <li class="middle__icon"><i class="far fa-file-pdf"></i></li>
+            <li class="middle__icon"><i class="fas fa-search"></i></li>
+            <li class="middle__icon"><i class="fas fa-ellipsis-v"></i></li>
+        </ul> 
+    </section>
+
+    <!-- MAIN -->
+    
+    <section class="main">
+        <div class="note__container">
+            <div class="note__content"></div>
+            <div class="note__content"></div>
+            <div class="note__content"></div>
+            <div class="note__content"></div>
+            <div class="note__content"></div>
+            <div class="note__content"></div>
+            <div class="note__content"></div>
+            <div class="note__content"></div>
+            <div class="note__content"></div>
+            <div class="note__content"></div>
+            <div class="note__content"></div>
+            <div class="note__content"></div>
+            <div class="note__content"></div>
+            <div class="note__content"></div>
+            <div class="note__content"></div>
+            <div class="note__content"></div>
+            <div class="note__content"></div>
+            <div class="note__content"></div>
+            <div class="note__content"></div>
+            <div class="note__content"></div>
+            <div class="note__content"></div>
+            <div class="note__content"></div>
+            <div class="note__content"></div>
+            <div class="note__content"></div>
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <section class="footer">
+        <div class="footer__bar"><i class="fas fa-bars"></i></div>
+        <div class="footer__bar"><i class="far fa-square"></i></div>
+        <div class="footer__bar"><i class="fas fa-chevron-left"></i></div>
+
+
+    </section>
+
+    <!-- ADD -->
+    <!-- 버튼을 누를 때 노트 작성 페이지 생성 -->
+    <a href="note.html" class="add"><i class="fas fa-plus"></i></a>
+    
+    <!-- UP -->
+    <button class="arrowBtn">
+        <i class="fas fa-arrow-up"></i>
+      </button>
+
+    <script src="index.js"></script>
+</body>
+</html>
