@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: burlywood;
+}
+
+.accrodion {
+  max-width: 800px;
+}
+
+.accrodion .contentBx {
+  position: relative;
+  margin: 10px 20px;
+}
+
+.accrodion .contentBx .label {
+  position: relative;
+  padding: 10px;
+  background-color: cadetblue;
+  color: #fff;
+  cursor: pointer;
+}
+
+.accrodion .contentBx .label::before {
+  content: "+";
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  font-size: 1.5em;
+}
+
+.accrodion .contentBx .content {
+  position: relative;
+  background-color: darkgrey;
+  height: 0;
+  overflow: hidden;
+  transition: 0.5s;
+  overflow-y: auto;
+}
+
+.accrodion .contentBx.active .label::before {
+  content: "-";
+}
+
+.accrodion .contentBx.active .content {
+  height: 150px;
+  padding: 10px;
+}
